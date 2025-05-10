@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TabLeaf - 收藏夹导航</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <img src="images/favicon-128x128.png" alt="TabLeaf Logo">
+        <h1>TabLeaf</h1>
+      </div>
+      <div class="search-container">
+        <input type="text" id="search-input" placeholder="搜索收藏夹...">
+        <button id="search-button"><i class="fas fa-search"></i></button>
+      </div>
+      <button id="export-button" class="export-btn"><i class="fas fa-download"></i> 导出此页面</button>
+    </header>
+
+    <main>
+      <div class="bookmarks-container">
+        <div id="bookmarks-tree">
+          <!-- 收藏夹内容将通过JavaScript动态加载 -->
+          <div class="loading">正在加载收藏夹内容...</div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>TabLeaf - 让您的收藏夹更加清晰可见</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

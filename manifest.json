@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "TabLeaf",
+  "version": "1.0",
+  "description": "将浏览器收藏夹项目可视化展示的扩展",
+  "permissions": ["bookmarks", "tabs"],
+  "action": {
+    "default_icon": {
+      "16": "images/favicon-16x16.png",
+      "48": "images/favicon-48x48.png",
+      "128": "images/favicon-128x128.png"
+    },
+    "default_title": "TabLeaf"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "images/favicon-16x16.png",
+    "48": "images/favicon-48x48.png",
+    "128": "images/favicon-128x128.png"
+  }
+}
