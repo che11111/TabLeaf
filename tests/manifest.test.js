@@ -11,8 +11,8 @@ function readJson(path) {
 }
 
 test('Chromium and Firefox manifests use the same release version', () => {
-  const chromium = readJson('manifest.json');
-  const firefox = readJson('manifest.firefox.json');
+  const chromium = readJson('extension/manifest.json');
+  const firefox = readJson('extension/manifest.firefox.json');
   const packageJson = readJson('package.json');
 
   assert.equal(firefox.version, chromium.version);
@@ -20,7 +20,7 @@ test('Chromium and Firefox manifests use the same release version', () => {
 });
 
 test('Firefox manifest includes the required MV3 fallbacks and metadata', () => {
-  const firefox = readJson('manifest.firefox.json');
+  const firefox = readJson('extension/manifest.firefox.json');
 
   assert.deepEqual(firefox.background.scripts, ['background.js']);
   assert.equal(firefox.background.service_worker, undefined);
@@ -34,11 +34,11 @@ test('Firefox manifest includes the required MV3 fallbacks and metadata', () => 
 
 test('both manifests allow large local backups', () => {
   assert.equal(
-    readJson('manifest.json').permissions.includes('unlimitedStorage'),
+    readJson('extension/manifest.json').permissions.includes('unlimitedStorage'),
     true
   );
   assert.equal(
-    readJson('manifest.firefox.json').permissions.includes('unlimitedStorage'),
+    readJson('extension/manifest.firefox.json').permissions.includes('unlimitedStorage'),
     true
   );
 });

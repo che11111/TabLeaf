@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 
-import { parseBookmarkFile } from '../lib/import.js';
+import { parseBookmarkFile } from '../extension/lib/import.js';
 
 test('rejects JSON objects without bookmark structure', () => {
   assert.throws(

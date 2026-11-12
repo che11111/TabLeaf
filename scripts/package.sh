@@ -4,6 +4,7 @@ set -euo pipefail
 
 project_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$project_dir"
+runtime_dir="$project_dir/extension"
 
 for command_name in node zip unzip; do
   if ! command -v "$command_name" >/dev/null 2>&1; then
@@ -32,17 +33,17 @@ for argument in "$@"; do
 done
 
 required_files=(
-  manifest.json
-  manifest.firefox.json
-  background.js
-  tab.html
-  app.js
-  styles.css
-  lib
-  _locales
-  images/favicon-16x16.png
-  images/favicon-48x48.png
-  images/favicon-128x128.png
+  extension/manifest.json
+  extension/manifest.firefox.json
+  extension/background.js
+  extension/tab.html
+  extension/app.js
+  extension/styles.css
+  extension/lib
+  extension/_locales
+  extension/images/favicon-16x16.png
+  extension/images/favicon-48x48.png
+  extension/images/favicon-128x128.png
 )
 
 for path in "${required_files[@]}"; do
@@ -58,7 +59,7 @@ fi
 
 version="$(node -e '
   const fs = require("node:fs");
-  const manifest = JSON.parse(fs.readFileSync("manifest.json", "utf8"));
+  const manifest = JSON.parse(fs.readFileSync("extension/manifest.json", "utf8"));
   process.stdout.write(manifest.version);
 ')"
 
@@ -80,27 +81,32 @@ trap cleanup EXIT
 stage_runtime() {
   local staging_dir="$1"
   local manifest_source="$2"
+  local runtime_dir="$3"
 
   # Copy only runtime files. README, tests, screenshots, market badges and
   # source artwork intentionally stay outside the release package.
   cp "$manifest_source" "$staging_dir/manifest.json"
-  cp background.js tab.html app.js styles.css "$staging_dir/"
+  cp "$runtime_dir/background.js" \
+    "$runtime_dir/tab.html" \
+    "$runtime_dir/app.js" \
+    "$runtime_dir/styles.css" \
+    "$staging_dir/"
 
   mkdir -p "$staging_dir/lib" "$staging_dir/_locales" "$staging_dir/images"
 
   while IFS= read -r -d '' file; do
     cp "$file" "$staging_dir/lib/"
-  done < <(find lib -maxdepth 1 -type f -name '*.js' -print0)
+  done < <(find "$runtime_dir/lib" -maxdepth 1 -type f -name '*.js' -print0)
 
   while IFS= read -r -d '' file; do
-    relative_path="${file#./}"
+    relative_path="${file#"$runtime_dir/"}"
     mkdir -p "$staging_dir/$(dirname "$relative_path")"
     cp "$file" "$staging_dir/$relative_path"
-  done < <(find _locales -type f -name 'messages.json' -print0)
+  done < <(find "$runtime_dir/_locales" -type f -name 'messages.json' -print0)
 
-  cp images/favicon-16x16.png \
-    images/favicon-48x48.png \
-    images/favicon-128x128.png \
+  cp "$runtime_dir/images/favicon-16x16.png" \
+    "$runtime_dir/images/favicon-48x48.png" \
+    "$runtime_dir/images/favicon-128x128.png" \
     "$staging_dir/images/"
 
   find "$staging_dir" -type f \( \
@@ -149,8 +155,8 @@ chromium_staging="$(mktemp -d "${TMPDIR:-/tmp}/tableaf-chromium.XXXXXX")"
 firefox_staging="$(mktemp -d "${TMPDIR:-/tmp}/tableaf-firefox.XXXXXX")"
 staging_dirs+=("$chromium_staging" "$firefox_staging")
 
-stage_runtime "$chromium_staging" manifest.json
-stage_runtime "$firefox_staging" manifest.firefox.json
+stage_runtime "$chromium_staging" "$runtime_dir/manifest.json" "$runtime_dir"
+stage_runtime "$firefox_staging" "$runtime_dir/manifest.firefox.json" "$runtime_dir"
 
 chromium_archive="$project_dir/dist/tableaf-$version.zip"
 firefox_archive="$project_dir/dist/tableaf-firefox-$version.zip"

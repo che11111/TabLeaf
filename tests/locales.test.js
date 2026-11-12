@@ -18,7 +18,7 @@ const locales = [
 ];
 
 function loadMessages(locale) {
-  const path = join(root, '_locales', locale, 'messages.json');
+  const path = join(root, 'extension', '_locales', locale, 'messages.json');
   return JSON.parse(readFileSync(path, 'utf8'));
 }
 
@@ -48,6 +48,8 @@ test('all locales contain the same translation keys', () => {
 });
 
 test('manifest default locale is present', () => {
-  const manifest = JSON.parse(readFileSync(join(root, 'manifest.json'), 'utf8'));
+  const manifest = JSON.parse(
+    readFileSync(join(root, 'extension', 'manifest.json'), 'utf8')
+  );
   assert.ok(locales.includes(manifest.default_locale));
 });

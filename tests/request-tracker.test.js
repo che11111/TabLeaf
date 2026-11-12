@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 
-import { createRequestTracker } from '../lib/request-tracker.js';
+import { createRequestTracker } from '../extension/lib/request-tracker.js';
 
 test('invalidates older asynchronous requests', () => {
   const tracker = createRequestTracker();

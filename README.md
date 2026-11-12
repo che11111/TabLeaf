@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="images/favicon-128x128.png" alt="TabLeaf logo" width="128">
+  <img src="extension/images/favicon-128x128.png" alt="TabLeaf logo" width="128">
 </p>
 
 # TabLeaf
@@ -57,16 +57,16 @@ npm test
 
 ## Directory
 
-- `app.js`: Page state and interactions
-- `lib/bookmarks.js`: Data normalization, URL validation, and search
-- `lib/import.js`: HTML / JSON import
-- `lib/storage.js`: Backup storage
-- `lib/render.js`: Bookmark tree rendering
-- `lib/export.js`: HTML export
-- `lib/request-tracker.js`: Async loading race protection
-- `lib/i18n.js`: UI localization
-- `_locales/`: Localized messages
-- `manifest.firefox.json`: Firefox-specific manifest
+- `extension/app.js`: Page state and interactions
+- `extension/lib/bookmarks.js`: Data normalization, URL validation, and search
+- `extension/lib/import.js`: HTML / JSON import
+- `extension/lib/storage.js`: Backup storage
+- `extension/lib/render.js`: Bookmark tree rendering
+- `extension/lib/export.js`: HTML export
+- `extension/lib/request-tracker.js`: Async loading race protection
+- `extension/lib/i18n.js`: UI localization
+- `extension/_locales/`: Localized messages
+- `extension/manifest.firefox.json`: Firefox-specific manifest
 - `scripts/package.sh`: Release package generation script
 
 ## Permissions
@@ -85,7 +85,7 @@ npm test
 ## Browser Support
 
 Supports Chromium browsers such as Microsoft Edge and Chrome, as well as Firefox. Chromium
-uses `manifest.json` and `background.service_worker`; Firefox builds use
-`manifest.firefox.json` and a compatible event page script. Safari still requires conversion with
+uses `extension/manifest.json` and `background.service_worker`; Firefox builds use
+`extension/manifest.firefox.json` and a compatible event page script. Safari still requires conversion with
 Apple Web Extension Converter and separate testing.
 

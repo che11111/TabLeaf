@@ -9,7 +9,7 @@ import {
   normalizeSearchText,
   normalizeBookmarkTree,
   searchBookmarks
-} from '../lib/bookmarks.js';
+} from '../extension/lib/bookmarks.js';
 
 test('normalizes Chrome root nodes and nested folders', () => {
   const tree = normalizeBookmarkTree([{

@@ -6,7 +6,7 @@ import {
   normalizeLocale,
   setLanguage,
   t
-} from '../lib/i18n.js';
+} from '../extension/lib/i18n.js';
 
 test('normalizes browser locale names to extension locale folders', () => {
   assert.equal(normalizeLocale('zh-CN'), 'zh_CN');

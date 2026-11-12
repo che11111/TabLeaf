@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="images/favicon-128x128.png" alt="TabLeaf logo" width="128">
+  <img src="extension/images/favicon-128x128.png" alt="TabLeaf logo" width="128">
 </p>
 
 # TabLeaf
@@ -57,16 +57,16 @@ npm test
 
 ## 目录
 
-- `app.js`：页面状态和交互
-- `lib/bookmarks.js`：数据规范化、URL 校验和搜索
-- `lib/import.js`：HTML / JSON 导入
-- `lib/storage.js`：备份存储
-- `lib/render.js`：书签树渲染
-- `lib/export.js`：HTML 导出
-- `lib/request-tracker.js`：异步加载竞态保护
-- `lib/i18n.js`：界面本地化
-- `_locales/`：各语言文案
-- `manifest.firefox.json`：Firefox 独立清单
+- `extension/app.js`：页面状态和交互
+- `extension/lib/bookmarks.js`：数据规范化、URL 校验和搜索
+- `extension/lib/import.js`：HTML / JSON 导入
+- `extension/lib/storage.js`：备份存储
+- `extension/lib/render.js`：书签树渲染
+- `extension/lib/export.js`：HTML 导出
+- `extension/lib/request-tracker.js`：异步加载竞态保护
+- `extension/lib/i18n.js`：界面本地化
+- `extension/_locales/`：各语言文案
+- `extension/manifest.firefox.json`：Firefox 独立清单
 - `scripts/package.sh`：发布包生成脚本
 
 ## 权限
@@ -85,7 +85,7 @@ npm test
 ## 浏览器支持
 
 支持 Microsoft Edge、Chrome 等 Chromium 浏览器，以及 Firefox。Chromium
-使用 `manifest.json` 和 `background.service_worker`；Firefox 构建使用
-`manifest.firefox.json` 和兼容的事件页脚本。Safari 仍需使用 Apple Web
+使用 `extension/manifest.json` 和 `background.service_worker`；Firefox 构建使用
+`extension/manifest.firefox.json` 和兼容的事件页脚本。Safari 仍需使用 Apple Web
 Extension Converter 转换后单独测试。
 

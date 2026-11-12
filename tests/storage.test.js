@@ -5,7 +5,7 @@ import {
   deleteBackup,
   readBackup,
   saveBackup
-} from '../lib/storage.js';
+} from '../extension/lib/storage.js';
 
 const BACKUP_KEY = 'tabLeafBookmarks';
 
