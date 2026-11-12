@@ -1,0 +1,51 @@
+# macOS
+.DS_Store
+._*
+__MACOSX/
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# Editors and IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Local upload/deployment configuration
+.vscode-upload.json
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Tests and caches
+coverage/
+test-results/
+playwright-report/
+.cache/
+.eslintcache
+*.tsbuildinfo
+
+# Build and release artifacts
+dist/
+*.crx
+*.xpi
+*.pem
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Temporary files
+*.tmp
+*.log
+
+
+.gitignore

@@ -1,40 +1,85 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TabLeaf - Bookmark Navigation</title>
+  <title data-i18n="pageTitle">TabLeaf - Bookmark Navigation</title>
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
   <div class="container">
     <header>
       <div class="logo">
-        <img src="images/favicon-128x128.png" alt="TabLeaf Logo">
+        <img src="images/favicon-128x128.png" alt="TabLeaf Logo" data-i18n-alt="logoAlt">
         <h1>TabLeaf</h1>
       </div>
-      <div class="search-container">
-        <input type="text" id="search-input" placeholder="Search the bookmarks...">
-        <button id="search-button"><i class="fas fa-search"></i></button>
+      <form id="search-form" class="search-container" role="search">
+        <label class="visually-hidden" for="search-input" data-i18n="searchLabel">Search bookmarks</label>
+        <input type="search" id="search-input" placeholder="Search bookmarks..." data-i18n-placeholder="searchPlaceholder" autocomplete="off">
+        <button id="search-button" type="submit" aria-label="Search bookmarks" data-i18n-aria-label="searchButton">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z"></path>
+          </svg>
+        </button>
+      </form>
+      <div class="header-actions">
+        <label class="visually-hidden" for="language-select" data-i18n="languageLabel">Interface language</label>
+        <select id="language-select" class="language-select" aria-label="Interface language" data-i18n-aria-label="languageLabel">
+          <option value="en">English</option>
+          <option value="zh_CN">简体中文</option>
+          <option value="zh_TW">繁體中文</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+          <option value="de">Deutsch</option>
+          <option value="fr">Français</option>
+          <option value="es">Español</option>
+          <option value="ru">Русский</option>
+        </select>
+        <button id="theme-toggle" class="icon-btn" type="button" aria-label="Switch to dark mode">
+          <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"></path>
+          </svg>
+          <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20.5 15.5A8.5 8.5 0 0 1 8.5 3.5a8.5 8.5 0 1 0 12 12Z"></path>
+          </svg>
+        </button>
+        <button id="collapse-toggle" class="secondary-btn compact-btn" type="button">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="m7 9 5-5 5 5M7 15l5 5 5-5"></path>
+          </svg>
+          <span id="collapse-toggle-label">Collapse all</span>
+        </button>
+        <button id="import-button" class="secondary-btn" type="button">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"></path>
+          </svg>
+          <span data-i18n="importButton">Import</span>
+        </button>
+        <button id="export-button" class="primary-btn" type="button">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3v12m0 0 4-4m-4 4-4-4M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"></path>
+          </svg>
+          <span data-i18n="exportButton">Export This Page</span>
+        </button>
       </div>
-      <button id="export-button" class="export-btn"><i class="fas fa-download"></i> Export This Page</button>
     </header>
+
+    <div id="status-message" class="status-message" role="status" aria-live="polite" hidden></div>
 
     <main>
       <div class="bookmarks-container">
-        <div id="bookmarks-tree">
-          <!-- 收藏夹内容将通过JavaScript动态加载 -->
-          <div class="loading">Loading the content of the bookmarks...</div>
+        <div id="bookmarks-tree" aria-live="polite" aria-busy="true">
+          <div class="loading" data-i18n="loading">Loading bookmarks...</div>
         </div>
       </div>
     </main>
 
     <footer>
-      <p>TabLeaf - Make your bookmarks more clearly visible. </p>
+      <p data-i18n="footer">TabLeaf - Your bookmarks, clearly organized.</p>
     </footer>
   </div>
 
-  <script src="script.js"></script>
+  <script type="module" src="app.js"></script>
 </body>
 </html>
