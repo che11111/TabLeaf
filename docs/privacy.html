@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta
+    name="description"
+    content="Privacy Policy for the TabLeaf browser extension."
+  >
+  <title>TabLeaf Privacy Policy</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --background: #f3f8f4;
+      --surface: #ffffff;
+      --text: #203029;
+      --muted: #5f6f67;
+      --accent: #287a50;
+      --accent-soft: #e4f2e9;
+      --border: #d8e5dd;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --background: #0e1712;
+        --surface: #17221c;
+        --text: #e8f1eb;
+        --muted: #a7b6ae;
+        --accent: #78c997;
+        --accent-soft: #1d3527;
+        --border: #304238;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      padding: 32px 20px;
+      color: var(--text);
+      font: 16px/1.7 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: linear-gradient(145deg, var(--background), var(--surface));
+    }
+
+    main {
+      max-width: 840px;
+      margin: 0 auto;
+      padding: clamp(24px, 5vw, 56px);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: 0 18px 60px rgb(20 54 35 / 12%);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      color: var(--accent);
+      font-weight: 750;
+      letter-spacing: 0.02em;
+    }
+
+    .brand::before {
+      width: 14px;
+      height: 14px;
+      content: "";
+      background: var(--accent);
+      border-radius: 4px 10px 4px 10px;
+      transform: rotate(-18deg);
+    }
+
+    h1,
+    h2 {
+      color: var(--text);
+      line-height: 1.25;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: clamp(32px, 6vw, 48px);
+    }
+
+    h2 {
+      margin: 36px 0 12px;
+      font-size: 21px;
+    }
+
+    p,
+    ul {
+      margin: 10px 0;
+    }
+
+    ul {
+      padding-left: 24px;
+    }
+
+    li + li {
+      margin-top: 7px;
+    }
+
+    a {
+      color: var(--accent);
+      text-underline-offset: 3px;
+    }
+
+    .updated,
+    .summary {
+      color: var(--muted);
+    }
+
+    .summary {
+      padding: 18px 20px;
+      margin: 24px 0;
+      background: var(--accent-soft);
+      border-left: 4px solid var(--accent);
+      border-radius: 8px;
+    }
+
+    .zh {
+      font-family: "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    }
+
+    footer {
+      padding-top: 24px;
+      margin-top: 40px;
+      color: var(--muted);
+      font-size: 14px;
+      border-top: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="brand">TabLeaf</div>
+    <h1>Privacy Policy</h1>
+    <p class="updated">Effective date: November 13, 2026</p>
+
+    <div class="summary">
+      TabLeaf processes bookmark information locally in the browser. It does
+      not upload bookmark data, analytics, account information, or browsing
+      activity to the developer's servers.
+    </div>
+
+    <h2>1. About TabLeaf</h2>
+    <p>
+      TabLeaf is a browser extension that displays the user's bookmarks in a
+      visual folder tree, provides bookmark search, stores bookmark files
+      explicitly imported by the user, and creates searchable offline HTML
+      exports.
+    </p>
+
+    <h2>2. Data processed by TabLeaf</h2>
+    <p>TabLeaf may process the following information:</p>
+    <ul>
+      <li>Bookmark titles, folder names, saved website URLs, and favicon URLs.</li>
+      <li>Bookmark backups that the user explicitly imports into TabLeaf.</li>
+      <li>Interface preferences, such as the selected language and theme.</li>
+    </ul>
+
+    <h2>3. How data is used</h2>
+    <ul>
+      <li>To display and search the user's bookmark tree.</li>
+      <li>To refresh the displayed bookmarks when browser bookmarks change.</li>
+      <li>To save and restore bookmark backups requested by the user.</li>
+      <li>To generate offline HTML exports requested by the user.</li>
+      <li>To remember interface preferences.</li>
+    </ul>
+
+    <h2>4. Local storage</h2>
+    <p>
+      Imported backups and interface preferences are stored locally using the
+      browser extension storage APIs. Bookmark data read directly from the
+      browser remains managed by the browser. TabLeaf does not operate a server
+      for storing or processing bookmark data.
+    </p>
+
+    <h2>5. Data sharing and sale</h2>
+    <p>
+      TabLeaf does not sell, rent, or share bookmark data with the developer,
+      advertisers, analytics providers, data brokers, or other third parties.
+      The extension does not collect analytics, account information, payment
+      information, health information, or authentication credentials.
+    </p>
+
+    <h2>6. Website icons</h2>
+    <p>
+      TabLeaf first attempts to obtain a bookmark's favicon from the browser's
+      local favicon cache. If no local favicon is available, the extension may
+      request a favicon directly from the bookmark's original website. As with
+      any normal web request, that website may receive standard technical
+      information such as the user's IP address and browser user agent. TabLeaf
+      does not send bookmark data to the developer during this process.
+    </p>
+
+    <h2>7. Data retention and deletion</h2>
+    <p>
+      Locally stored preferences and imported backups remain in the browser
+      until the user deletes them through TabLeaf, clears the extension's data,
+      or removes the extension. Browser bookmarks remain under the control of
+      the browser and can be managed through the browser's bookmark settings.
+    </p>
+
+    <h2>8. Security</h2>
+    <p>
+      TabLeaf minimizes data access by requesting only the permissions needed
+      for its bookmark-viewing features. Bookmark data is not transmitted to
+      developer-controlled servers. No method of local storage is completely
+      secure, so users should protect access to their browser profile and
+      device.
+    </p>
+
+    <h2>9. Children's privacy</h2>
+    <p>
+      TabLeaf does not knowingly collect personal information from children.
+      The extension has no account system and does not transmit bookmark data
+      to the developer.
+    </p>
+
+    <h2>10. Changes to this policy</h2>
+    <p>
+      This policy may be updated if TabLeaf's data practices change. The latest
+      version will remain available at this URL and will show a revised
+      effective date.
+    </p>
+
+    <h2>11. Contact</h2>
+    <p>
+      Privacy questions can be submitted through the
+      <a href="https://github.com/che11111/TabLeaf/issues">TabLeaf GitHub issue tracker</a>.
+    </p>
+
+    <h2 class="zh">中文摘要</h2>
+    <p class="zh">
+      TabLeaf 会在用户浏览器本地读取书签标题、文件夹名称和网址，用于展示、搜索、备份和导出。用户主动导入的备份及界面偏好保存在浏览器本地扩展存储中。TabLeaf
+      不会将书签数据、分析数据、账号信息或浏览活动上传至开发者服务器，也不会出售或共享给第三方。若浏览器本地没有可用
+      favicon，扩展可能直接向书签所属网站请求该图标。
+    </p>
+
+    <footer>
+      TabLeaf Privacy Policy · Last updated November 13, 2026
+    </footer>
+  </main>
+</body>
+</html>
