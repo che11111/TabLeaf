@@ -8,7 +8,7 @@
   <a href="https://microsoftedge.microsoft.com/addons/detail/tableaf/">
     <img src="assets/microsoft-edge-addons-badge.png" alt="Get TabLeaf from Microsoft Edge Add-ons" height="40">
   </a>
-  <img src="assets/google-chrome-web-store-badge.png" alt="Available in the Chrome Web Store" height="40">
+  <a href="https://chromewebstore.google.com/detail/tableaf/epkmlnmdkemfgoichlcofhpnadgcpldk"><img src="assets/google-chrome-web-store-badge.png" alt="Available in the Chrome Web Store" height="40"></a>
   <a href="https://addons.mozilla.org/zh-CN/firefox/addon/tableaf/">
     <img src="assets/firefox-get-the-addon.svg" alt="Get TabLeaf from Firefox Add-ons" height="40">
   </a>
