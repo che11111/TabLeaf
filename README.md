@@ -5,7 +5,7 @@
 # TabLeaf
 
 <p align="center">
-  <a href="https://microsoftedge.microsoft.com/addons/detail/tableaf/">
+  <a href="https://microsoftedge.microsoft.com/addons/detail/tableaf/ddgmhnlbnbgjjccafnfjfknbadpdknle">
     <img src="assets/microsoft-edge-addons-badge.png" alt="Get TabLeaf from Microsoft Edge Add-ons" height="40">
   </a>
   <a href="https://chromewebstore.google.com/detail/tableaf/epkmlnmdkemfgoichlcofhpnadgcpldk"><img src="assets/google-chrome-web-store-badge.png" alt="Available in the Chrome Web Store" height="40"></a>
